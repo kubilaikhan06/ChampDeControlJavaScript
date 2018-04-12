@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exo contrôle de champ</title>
+        <meta charset="utf-8" />  
+        
+    </head>
+    
+    <body>
+        <h1>saisissez un texte et cliquez sur le bouton "contrôle"</h1>
+        
+        <form action="http://www.afpa.fr" method="post" onsubmit=" return f_valid();" >
+            <!--<label for="nom">Nom: </label>
+            <input type="text" id="nom" name="nom" required="required" /><br />-->
+            <input type="text" id="texte" name="texte" />
+            <input type="submit" id="controle" value="contrôle" />
+        </form>
+       
+         <script>
+            var validation = document.getElementById('controle');
+             var texte = document.getElementById('texte');
+            
+             function f_valid(){
+                 if(texte.value.length <2){                     
+                     alert('vous devez entrer au moins 2 caractères');
+                     texte.focus();
+                     return false;
+                 }
+                 else{
+                     alert("vous avez saisi: '"+ texte.value+"', vous allez être redirigé vers la page suivante.");
+                     return true;
+                 }
+             };
+        </script>
+    
+    </body>
+</html>

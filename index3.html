@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript-contrôle de champ</title>
+        <meta charset="utf-8" />  
+        
+    </head>
+    
+    <body>
+        <h2>Contrôle Formulaie</h2>
+        Saisissez un texte et cliquez sur le bouton "contrôle"<br />
+        
+        <form id="formSaisie" action="http://www.afpa.fr" method="post" >
+            <!--<label for="nom">Nom: </label>
+            <input type="text" id="nom" name="nom" required="required" /><br />-->
+            <input type="text" id="texte" name="texte" /><br />
+            <input type="button" id="controle" value="contrôle" />
+        </form>
+       
+         <script>
+             var validation = document.getElementById('controle');
+             var texte = document.getElementById('texte');
+             var form = document.getElementById('formSaisie');
+            
+             function verifForm (){
+                 if(texte.value.length <2){                     
+                     alert('vous devez entrer au moins 2 caractères');
+                 }
+                 else{
+                     alert("vous avez saisi: '"+ texte.value+"', vous allez être redirigé vers la page suivante.");
+                     form.submit();
+                 }
+             };
+             validation.addEventListener('click', verifForm);
+        </script>
+    
+    </body>
+</html>
